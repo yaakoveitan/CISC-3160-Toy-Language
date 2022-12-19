@@ -110,7 +110,7 @@ class RDParser:
       else:
           raise ValueError(f"Expected token {token}, but found {self.tokens[self.current_token]}")
 
-test='a=5 x=6 y = -a*(a +x -3)'
+test='a=5 b=6 c = -a*(a +b -3) d=7+c'
 print(test)
 test_tokenized = tokenize(test)
 parser = RDParser(test_tokenized)
@@ -118,6 +118,6 @@ parser.parse_program()
 
 
 # Print the values of the variables after the program has been parsed
-print(f"a = {parser.variables['a']}")  
-print(f"x = {parser.variables['x']}")  
-print(f"y = {parser.variables['y']}")  
+
+for i in parser.variables:
+  print(str(i) + " = " + str(parser.variables[i]))
