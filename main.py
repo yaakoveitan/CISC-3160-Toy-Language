@@ -125,3 +125,9 @@ parser.parse_program()
 
 for i in parser.variables:
   print(str(i) + " = " + str(parser.variables[i]))
+
+#output: 
+#a = 5
+#b = 6
+#c = -40
+#d = -33
